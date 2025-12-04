@@ -1,0 +1,19 @@
+[project]
+name = "ai_audit"
+version = "0.1.0"
+description = "AI audit utilities"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+  "langgraph",
+  "langchain-google-genai",
+  "langchain-groq",
+  "playwright",
+  "python-dotenv>=1.2.1",
+  "fastapi>=0.123.5",
+  "uvicorn[standard]>=0.38.0",
+]
+
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
