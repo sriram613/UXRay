@@ -1,4 +1,10 @@
 import uvicorn
+import sys
+import asyncio
+
+if sys.platform == 'win32':
+    asyncio.set_event_loop_policy(asyncio.WindowsProactorEventLoopPolicy())
+
 from fastapi import FastAPI
 from app.api.routes import router
 from app.core.config import settings

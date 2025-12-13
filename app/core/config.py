@@ -9,6 +9,8 @@ class Settings:
         self.GROQ_API_KEY = self._get_env_variable("GROQ_API_KEY", "Enter your Groq API key: ")
         self.HOST = "127.0.0.1"
         self.PORT = 8001
+        self.VISION_MODEL = os.getenv("VISION_MODEL", "llama-3.2-90b-vision-preview")
+        self.REFINEMENT_MODEL = os.getenv("REFINEMENT_MODEL", "llama-3.3-70b-versatile")
 
     def _get_env_variable(self, key: str, prompt: str) -> str:
         value = os.getenv(key)

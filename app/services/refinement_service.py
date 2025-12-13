@@ -15,7 +15,7 @@ async def refinement_node(state: AgentState) -> dict:
     try:
         # Initialize Groq
         llm = ChatGroq(
-            model_name="openai/gpt-oss-20b", 
+            model_name=settings.REFINEMENT_MODEL, 
             temperature=0,
             groq_api_key=settings.GROQ_API_KEY
         )

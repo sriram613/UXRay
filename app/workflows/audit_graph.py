@@ -18,7 +18,23 @@ def create_audit_graph():
     # Add edges
     workflow.set_entry_point("browser")
     workflow.add_edge("browser", "vision_auditor")
-    workflow.add_edge("vision_auditor", "data_structurer")
+    
+    def should_continue(state: AgentState):
+        # Check if vision analysis returned an error or empty result
+        raw = state.get("raw_analysis", "")
+        if not raw or raw.startswith("Error"):
+            return END
+        return "data_structurer"
+
+    workflow.add_conditional_edges(
+        "vision_auditor",
+        should_continue,
+        {
+            "data_structurer": "data_structurer",
+            END: END
+        }
+    )
+    
     workflow.add_edge("data_structurer", END)
 
     # Compile

@@ -21,7 +21,10 @@ async def browser_node(state: AgentState) -> dict:
             page = await browser.new_page()
             await page.set_viewport_size({"width": 1280, "height": 720})
 
-            await page.goto(url, wait_until="networkidle")
+            # Use domcontentloaded which is faster and less prone to timeouts on complex SPAs
+            await page.goto(url, wait_until="domcontentloaded", timeout=60000)
+            # Wait a bit for animations/rendering to settle
+            await page.wait_for_timeout(3000)
             
             # Get screenshot as raw bytes
             screenshot_bytes = await page.screenshot(full_page=False)
