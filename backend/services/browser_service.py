@@ -1,6 +1,6 @@
 import base64
 from playwright.async_api import async_playwright
-from app.core.state import AgentState
+from backend.core.state import AgentState
 
 async def browser_node(state: AgentState) -> dict:
     """

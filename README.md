@@ -74,7 +74,7 @@ GROQ_API_KEY=your_groq_api_key_here
 Start the WebSocket server:
 
 ```bash
-uv run -m app.main
+uv run run.py
 ```
 
 The server will start on `http://127.0.0.1:8001`.

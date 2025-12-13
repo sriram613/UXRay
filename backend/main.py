@@ -6,8 +6,8 @@ if sys.platform == 'win32':
     asyncio.set_event_loop_policy(asyncio.WindowsProactorEventLoopPolicy())
 
 from fastapi import FastAPI
-from app.api.routes import router
-from app.core.config import settings
+from backend.api.routes import router
+from backend.core.config import settings
 
 def create_app() -> FastAPI:
     app = FastAPI(title="AI Audit Service")

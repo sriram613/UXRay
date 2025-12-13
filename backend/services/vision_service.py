@@ -1,6 +1,6 @@
 from groq import AsyncGroq
-from app.core.state import AgentState
-from app.core.config import settings
+from backend.core.state import AgentState
+from backend.core.config import settings
 
 async def vision_node(state: AgentState) -> dict:
     """

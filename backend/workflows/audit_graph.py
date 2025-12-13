@@ -1,8 +1,8 @@
 from langgraph.graph import StateGraph, END
-from app.core.state import AgentState
-from app.services.browser_service import browser_node
-from app.services.vision_service import vision_node
-from app.services.refinement_service import refinement_node
+from backend.core.state import AgentState
+from backend.services.browser_service import browser_node
+from backend.services.vision_service import vision_node
+from backend.services.refinement_service import refinement_node
 
 def create_audit_graph():
     """

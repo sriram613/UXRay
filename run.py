@@ -1,7 +1,7 @@
 import uvicorn
 import sys
 import asyncio
-from app.core.config import settings
+from backend.core.config import settings
 
 if __name__ == "__main__":
     # Set the event loop policy to WindowsProactorEventLoopPolicy on Windows
@@ -13,4 +13,4 @@ if __name__ == "__main__":
     
     # Run Uvicorn without reload to ensure the event loop policy is respected
     # and to avoid subprocess spawning issues on Windows
-    uvicorn.run("app.main:app", host=settings.HOST, port=settings.PORT, reload=False)
+    uvicorn.run("backend.main:app", host=settings.HOST, port=settings.PORT, reload=False)

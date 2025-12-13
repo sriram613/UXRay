@@ -1,6 +1,6 @@
 from langchain_groq import ChatGroq
-from app.core.state import AgentState
-from app.core.config import settings
+from backend.core.state import AgentState
+from backend.core.config import settings
 
 async def refinement_node(state: AgentState) -> dict:
     """

@@ -1,8 +1,8 @@
 import json
 from fastapi import APIRouter, WebSocket, WebSocketDisconnect
 from pydantic import ValidationError
-from app.workflows.audit_graph import audit_graph
-from app.core.schemas import AuditRequest, AuditReport
+from backend.workflows.audit_graph import audit_graph
+from backend.core.schemas import AuditRequest, AuditReport
 
 router = APIRouter()
 
